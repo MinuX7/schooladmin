@@ -1,0 +1,12 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    # localhost url: jdbc:postgresql://host.minikube.internal:5433/schooldb
+    url: jdbc:postgresql://dbpostgresql.default:5432/schooldb_kubernetes
+    username: cosmind
+    password:
+school:
+  dataprovider:
+    url: http://schoolexternal-service.default:8081
