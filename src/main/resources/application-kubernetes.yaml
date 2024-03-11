@@ -6,7 +6,6 @@ spring:
     # localhost url: jdbc:postgresql://host.minikube.internal:5433/schooldb
     url: jdbc:postgresql://dbpostgresql.default:5432/schooldb_kubernetes
     username: cosmind
-    password:
-school:
-  dataprovider:
-    url: http://schoolexternal-service.default:8081
+    password: test
+externalschool:
+  url: http://schoolexternal-service.default:8081

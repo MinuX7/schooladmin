@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 public class ExternalService {
     @Autowired
     RestTemplate restTemplate;
-    @Value("${school.dataprovider.url}")
+    @Value("${externalschool.url}")
     String schoolServerUrl;
 
     public String getData() {

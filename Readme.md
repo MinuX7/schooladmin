@@ -36,15 +36,16 @@ For detail configuration check this link [ Check this link](https://medium.com/@
  * Add ecr:* permissions to aws user. (..PolicyForECRAccess)
  * `aws ecr get-login-password --region region` to get auth token
  * Run `kubectl create secret docker-registry aws-ecr-secret --docker-server=<your-registry-server> --docker-username=<your-name> --docker-password=<your-pword> --docker-email=<your-email>`
-      * <your-registry-server> would be aws_account_id.dkr.ecr.region.amazonaws.com
-      * <your-name> would be AWS
-      *  <your-pword> would be the login password from the AWS ECR command above
+      * <your-registry-server> would be aws_account_id.dkr.ecr.region.amazonaws.com.
+      * <your-name> would be AWS.
+      *  <your-pword> would be the login password from the AWS ECR command above.
       *  <your-email> email of your aws account.
   * Check generated secret: `kubectl get secret aws-ecr-secret --output=yaml` 
   * Define secret name under **imagePullSecrets** in deployment:
-     
+
     
        imagePullSecrets:
          - name: regcred
 
 ###
+test

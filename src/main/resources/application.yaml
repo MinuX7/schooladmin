@@ -6,6 +6,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/schooldb
     username: cosmind
     password:
-school:
-  dataprovider:
-    url: http://localhost:8081
+externalschool:
+  url: http://localhost:8081
+project:
+  version: 1.0.1

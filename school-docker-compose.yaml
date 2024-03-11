@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  schooladmin:
+    build: 
+      context: schooladmin
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    env_file:
+      - schooladmin_env
+    depends_on:
+      - externalschool
+      - postgres_db
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  externalschool:
+    build: 
+      context: externalschool
+    ports:
+      - 8081:8081
+  postgres_db:
+    image: postgres:16-bullseye
+    ports:
+      - 5433:5432
+    volumes:
+      - ~/dockerdata/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=Test1234
+      - POSTGRES_USER=cosmind
+      - POSTGRES_DB=schooldb
