@@ -8,5 +8,19 @@ spring:
     password:
 externalschool:
   url: http://localhost:8081
+notifications-service:
+  url: http://localhost:8082
+configuration:
+  base-storage: /home/cosmind/schooladmin-data/
+  profilePicture:
+    default-avatar: default-avatar.jpg
 project:
   version: 1.0.1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ['prometheus']
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} %X - %msg%n"

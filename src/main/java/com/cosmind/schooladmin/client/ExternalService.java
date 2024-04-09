@@ -11,8 +11,14 @@ public class ExternalService {
     RestTemplate restTemplate;
     @Value("${externalschool.url}")
     String schoolServerUrl;
+    @Value("${notifications-service.url}")
+    String notificationsServiceUrl;
 
     public String getData() {
         return this.restTemplate.getForObject(schoolServerUrl + "/data", String.class);
+    }
+
+    public String getNotifications() {
+        return this.restTemplate.getForObject(notificationsServiceUrl + "/notifications", String.class);
     }
 }
