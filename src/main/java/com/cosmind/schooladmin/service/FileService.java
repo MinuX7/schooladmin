@@ -57,7 +57,9 @@ public class FileService {
     }
 
     public FileResponseDto getProfilePicture(String fileName)  {
+
         String profilePicture = baseStorage + File.separator + "profile-pictures" + File.separator + fileName;
+        logger.info("Fetching profile file from {}", profilePicture);
         File profilePictureFile = new File(profilePicture);
         try {
             byte[] data = IOUtils.toByteArray(new FileInputStream(profilePictureFile));

@@ -27,6 +27,8 @@ To stop the stack execute:
 To use a local image build it inside minikube docker. Run: `eval $(minikube docker-env)`
 Should be run in each terminal.
 
+Mount local directory to minikube directory: `minikube mount /home/cosmind/kubernetes-data:/usr/share/data`
+
 **!Note** DNS did not work for external school service. Need to restart dns service:
 `kubectl -n kube-system rollout restart deployment coredns`
 

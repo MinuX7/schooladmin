@@ -11,3 +11,7 @@ externalschool:
   url: http://schoolexternal-service.default:8081
 notifications-service:
   url: http://localhost:8082
+configuration:
+  base-storage: /schooladmin_data
+  profilePicture:
+    default-avatar: default-avatar.jpg
