@@ -1,0 +1,1 @@
+alter table student_class ADD COLUMN status VARCHAR(20) NOT NULL DEFAULT 'NEW' CHECK (status in ('NEW', 'OPEN', 'CONFIGURED', 'CLOSED'));

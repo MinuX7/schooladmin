@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 public class ApiError {
-    private String dispalyMessage;
+    private String displayMessage;
     private List<String> detailsMessages;
 
 }

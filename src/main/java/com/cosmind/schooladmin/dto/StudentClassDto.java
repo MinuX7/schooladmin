@@ -12,6 +12,7 @@ public class StudentClassDto {
     private Long id;
     private Integer grade;
     private Character label;
+    private String status;
     private School school;
 
     public static StudentClass toStudentClassModel(StudentClassDto studentClassDto, School school) {
@@ -27,6 +28,7 @@ public class StudentClassDto {
                 .id(studentClass.getId())
                 .grade(studentClass.getGrade())
                 .label(studentClass.getLabel())
+                .status(studentClass.getStatus().name())
             .build();
     }
 

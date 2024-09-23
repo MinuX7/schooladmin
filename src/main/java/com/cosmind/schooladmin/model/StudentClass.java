@@ -22,6 +22,10 @@ public class StudentClass {
     @Column(name = "label")
     private Character label;
 
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private ClassStatus status;
+
     @ManyToOne()
     @JoinColumn(name="school_id", nullable=false)
     private School school;
