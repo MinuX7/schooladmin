@@ -1,9 +1,6 @@
 package com.cosmind.schooladmin.dto;
 
-import com.cosmind.schooladmin.model.Course;
-import com.cosmind.schooladmin.model.School;
-import com.cosmind.schooladmin.model.StudentClass;
-import com.cosmind.schooladmin.model.Teacher;
+import com.cosmind.schooladmin.model.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,10 +14,11 @@ public class StudentClassWithCoursesDto {
     private StudentClassDTO studentClass;
     private List<CourseDTO> courses;
 
-    public static StudentClass toStudentClassMode(StudentClassWithCoursesDto studentClassWithCoursesDto, School school) {
+    public static StudentClass toStudentClassModel(StudentClassWithCoursesDto studentClassWithCoursesDto, School school) {
         StudentClass studentClassModel = new StudentClass();
         studentClassModel.setGrade(studentClassWithCoursesDto.getStudentClass().getGrade());
         studentClassModel.setLabel(studentClassWithCoursesDto.getStudentClass().getLabel());
+        studentClassModel.setStatus(ClassStatus.OPEN);
         studentClassModel.setSchool(school);
         List<Course> studentCourses = studentClassWithCoursesDto.getCourses().stream().map(courseDto -> {
             Course course = new Course();

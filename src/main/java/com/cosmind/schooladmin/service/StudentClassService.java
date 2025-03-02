@@ -44,7 +44,7 @@ public class StudentClassService {
 
     public StudentClassDto createStudentClassWithCourses(Long schoolId, StudentClassWithCoursesDto studentClassWithCourses) {
         School school = schoolRepository.findById(schoolId).orElseThrow();
-        StudentClass studentClass = StudentClassWithCoursesDto.toStudentClassMode(studentClassWithCourses, school);
+        StudentClass studentClass = StudentClassWithCoursesDto.toStudentClassModel(studentClassWithCourses, school);
         studentClass = studentClassRepository.save(studentClass);
         String clasDispalyName = studentClass.getLabel() != null ? studentClass.getGrade().toString() + "-" + studentClass.getLabel() : studentClass.getGrade().toString();
         logger.info("Successfully added class {} with {} courses to school {}.", clasDispalyName, studentClass.getCourses().size(), school.getName());

@@ -1,5 +1,6 @@
 package com.cosmind.schooladmin.dto;
 
+import com.cosmind.schooladmin.model.ClassStatus;
 import com.cosmind.schooladmin.model.School;
 import com.cosmind.schooladmin.model.StudentClass;
 import lombok.Builder;
@@ -19,6 +20,7 @@ public class StudentClassDto {
         StudentClass studentClass = new StudentClass();
         studentClass.setGrade(studentClassDto.getGrade());
         studentClass.setLabel(studentClassDto.getLabel());
+        studentClass.setStatus(ClassStatus.NEW);
         studentClass.setSchool(school);
         return studentClass;
     }
